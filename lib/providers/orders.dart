@@ -9,15 +9,15 @@ class OrderItem {
   final DateTime dateTime;
 
   OrderItem({
-    @required this.id,
-    @required this.amount,
-    @required this.products,
-    @required this.dateTime,
+    required this.id,
+    required this.amount,
+    required this.products,
+    required this.dateTime,
   });
 }
 
 class Orders with ChangeNotifier {
-  List<OrderItem> _orders = [];
+  final List<OrderItem> _orders = [];
 
   List<OrderItem> get orders {
     return [..._orders];

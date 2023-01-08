@@ -11,9 +11,11 @@ import './screens/orders_screen.dart';
 import './screens/user_products_screen.dart';
 import './screens/edit_product_screen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -31,9 +33,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           title: 'MyShop',
           theme: ThemeData(
-            primarySwatch: Colors.purple,
-            accentColor: Colors.deepOrange,
             fontFamily: 'Lato',
+            colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+                .copyWith(secondary: Colors.deepOrange),
           ),
           home: ProductsOverviewScreen(),
           routes: {

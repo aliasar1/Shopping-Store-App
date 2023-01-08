@@ -4,16 +4,14 @@ import 'package:provider/provider.dart';
 import '../providers/products.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  // final String title;
-  // final double price;
-
-  // ProductDetailScreen(this.title, this.price);
   static const routeName = '/product-detail';
+
+  const ProductDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final productId =
-        ModalRoute.of(context).settings.arguments as String; // is the id!
+        ModalRoute.of(context)!.settings.arguments as String; // is the id!
     final loadedProduct = Provider.of<Products>(
       context,
       listen: false,
@@ -25,7 +23,7 @@ class ProductDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
+            SizedBox(
               height: 300,
               width: double.infinity,
               child: Image.network(
@@ -33,19 +31,19 @@ class ProductDetailScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               '\$${loadedProduct.price}',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.grey,
                 fontSize: 20,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               width: double.infinity,
               child: Text(
                 loadedProduct.description,

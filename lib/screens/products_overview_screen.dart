@@ -13,6 +13,8 @@ enum FilterOptions {
 }
 
 class ProductsOverviewScreen extends StatefulWidget {
+  const ProductsOverviewScreen({super.key});
+
   @override
   _ProductsOverviewScreenState createState() => _ProductsOverviewScreenState();
 }
@@ -24,7 +26,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MyShop'),
+        title: const Text('MyShop'),
         actions: <Widget>[
           PopupMenuButton(
             onSelected: (FilterOptions selectedValue) {
@@ -36,27 +38,27 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                 }
               });
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.more_vert,
             ),
             itemBuilder: (_) => [
-                  PopupMenuItem(
-                    child: Text('Only Favorites'),
-                    value: FilterOptions.Favorites,
-                  ),
-                  PopupMenuItem(
-                    child: Text('Show All'),
-                    value: FilterOptions.All,
-                  ),
-                ],
+              const PopupMenuItem(
+                value: FilterOptions.Favorites,
+                child: Text('Only Favorites'),
+              ),
+              const PopupMenuItem(
+                value: FilterOptions.All,
+                child: Text('Show All'),
+              ),
+            ],
           ),
           Consumer<Cart>(
             builder: (_, cart, ch) => Badge(
-                  child: ch,
-                  value: cart.itemCount.toString(),
-                ),
+              value: cart.itemCount.toString(),
+              child: ch!,
+            ),
             child: IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.shopping_cart,
               ),
               onPressed: () {
