@@ -5,7 +5,7 @@ class Badge extends StatelessWidget {
     Key? key,
     required this.child,
     required this.value,
-    this.color = Colors.pink,
+    this.color = Colors.black,
   }) : super(key: key);
 
   final Widget child;
@@ -23,7 +23,6 @@ class Badge extends StatelessWidget {
           top: 8,
           child: Container(
             padding: const EdgeInsets.all(2.0),
-            // color: Theme.of(context).accentColor,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               color: color,
