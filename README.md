@@ -32,3 +32,18 @@ This application in build with flutter. The application is developed in order to
 ![image](https://user-images.githubusercontent.com/74453775/213926509-4989c427-3de6-43ca-be26-5efcb4ad9e42.png)
 ![image](https://user-images.githubusercontent.com/74453775/213926564-6e1d9651-b7b0-4962-9f7e-00840213f7ce.png)
 
+### To use this app follow below instructions:
+
+1. Clone this app using below syntax:
+
+   > git clone https://github.com/aliasar1/Shopping-Store-App.git
+
+2. After cloning install packages using below syntax:
+   > flutter pub get
+
+Above command will install all the necessary packages.
+
+3. Run the app on your mobile emulator using below command:
+   > flutter run
+   
+### **_Thank you. Happy Coding! 😃_**
