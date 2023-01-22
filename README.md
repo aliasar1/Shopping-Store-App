@@ -1,7 +1,7 @@
 # Shopping Store App 👜
 
 ## Overview
-This application in build with flutter. The application is developed in order to help buyers and sellers. Buyers can add multiple orders and also check the history of orders where as sellers can sell their products by adding them to application. User can also delete the order if they want.
+This application in build with flutter. The application is developed in order to help buyers and sellers. Buyers can add multiple orders and also check the history of orders where as sellers can sell their products by adding, editing and deletinhg them to application. User can also delete the order if they want. Amount will be calulated on the basis of items placed in cart.
 
 ## Screenshots
 ### Main Page
