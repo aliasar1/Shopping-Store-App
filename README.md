@@ -28,5 +28,7 @@ This application in build with flutter. The application is developed in order to
 ### Orders History Screen
 ![image](https://user-images.githubusercontent.com/74453775/213926494-ca35b0ed-0fb8-4381-bf79-2a09436339bd.png)
 
-### Manage Products
+### Manage Products (Add, Update, Delete)
 ![image](https://user-images.githubusercontent.com/74453775/213926509-4989c427-3de6-43ca-be26-5efcb4ad9e42.png)
+![image](https://user-images.githubusercontent.com/74453775/213926564-6e1d9651-b7b0-4962-9f7e-00840213f7ce.png)
+
