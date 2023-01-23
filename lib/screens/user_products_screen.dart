@@ -26,7 +26,7 @@ class UserProductsScreen extends StatelessWidget {
           ),
         ],
       ),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: ListView.builder(
