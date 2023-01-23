@@ -19,12 +19,6 @@ class Products with ChangeNotifier {
   }
 
   void addProduct(Product product) {
-    print(product.id);
-    print(product.title);
-    print(product.description);
-    print(product.price);
-    print(product.imageUrl);
-    print(product.isFavorite);
     final newProduct = Product(
       title: product.title,
       description: product.description,
