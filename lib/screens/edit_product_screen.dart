@@ -19,6 +19,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
   final _imageUrlController = TextEditingController();
   final _imageUrlFocusNode = FocusNode();
   final _form = GlobalKey<FormState>();
+  var _isInit = true;
   var _editedProduct = Product(
     id: null,
     title: '',
@@ -32,7 +33,6 @@ class _EditProductScreenState extends State<EditProductScreen> {
     'price': '',
     'imageUrl': '',
   };
-  var _isInit = true;
 
   @override
   void initState() {
@@ -43,16 +43,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
   @override
   void didChangeDependencies() {
     if (_isInit) {
-      final productId = ModalRoute.of(context)!.settings.arguments as String;
-      _editedProduct =
-          Provider.of<Products>(context, listen: false).findById(productId);
-      _initValues = {
-        'title': _editedProduct.title,
-        'description': _editedProduct.description,
-        'price': _editedProduct.price.toString(),
-        'imageUrl': '',
-      };
-      _imageUrlController.text = _editedProduct.imageUrl;
+      final productId = ModalRoute.of(context)!.settings.arguments as String?;
+      if (productId != null) {
+        _editedProduct = Provider.of<Products>(context).findById(productId);
+        _initValues = {
+          'title': _editedProduct.title,
+          'description': _editedProduct.description,
+          'price': _editedProduct.price.toString(),
+          'imageurl': '',
+        };
+        _imageUrlController.text = _editedProduct.imageUrl;
+      }
     }
     _isInit = false;
     super.didChangeDependencies();
