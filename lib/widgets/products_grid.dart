@@ -31,11 +31,11 @@ class ProductsGrid extends StatelessWidget {
         : Center(
             child: showFavs
                 ? const Text(
-                    "You haven't mark any item as favorite.",
+                    "You haven't mark any product as favorite.",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   )
                 : const Text(
-                    "No items available in the store.",
+                    "No product available in the store.",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
           );

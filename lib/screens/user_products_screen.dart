@@ -27,22 +27,29 @@ class UserProductsScreen extends StatelessWidget {
         ],
       ),
       drawer: const AppDrawer(),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: ListView.builder(
-          itemCount: productsData.items.length,
-          itemBuilder: (_, i) => Column(
-            children: [
-              UserProductItem(
-                productsData.items[i].id!,
-                productsData.items[i].title,
-                productsData.items[i].imageUrl,
+      body: productsData.items.isEmpty
+          ? const Center(
+              child: Text(
+                "No products added!",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
-              const Divider(),
-            ],
-          ),
-        ),
-      ),
+            )
+          : Padding(
+              padding: const EdgeInsets.all(8),
+              child: ListView.builder(
+                itemCount: productsData.items.length,
+                itemBuilder: (_, i) => Column(
+                  children: [
+                    UserProductItem(
+                      productsData.items[i].id!,
+                      productsData.items[i].title,
+                      productsData.items[i].imageUrl,
+                    ),
+                    const Divider(),
+                  ],
+                ),
+              ),
+            ),
     );
   }
 }
