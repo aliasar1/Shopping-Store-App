@@ -43,11 +43,23 @@ class CartScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Provider.of<Orders>(context, listen: false).addOrder(
-                        cart.items.values.toList(),
-                        cart.totalAmount,
-                      );
-                      cart.clear();
+                      if (cart.items.isNotEmpty) {
+                        Provider.of<Orders>(context, listen: false).addOrder(
+                          cart.items.values.toList(),
+                          cart.totalAmount,
+                        );
+                        cart.clear();
+                      } else {
+                        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              'Add products to cart first to order.',
+                            ),
+                            duration: Duration(seconds: 2),
+                          ),
+                        );
+                      }
                     },
                     style: ButtonStyle(
                         foregroundColor: MaterialStateProperty.all(
